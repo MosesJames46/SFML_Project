@@ -4,8 +4,8 @@
 #include "mouse_property.h"
 
 
-void Orthogonal::draw_points(sf::RenderWindow& window) {
-
+void Orthogonal::draw_points(float xvalue, float yvalue, int number, sf::RenderWindow& window) {
+	
 	
 	
 	

@@ -29,7 +29,7 @@ int main() {
         std::cout << z.calculateY(window) << "\n";
         std::cout << z.calculateZ(200, z.calculateRadians(45), window) << " This is the z axis for " << 200 << ".\n";
         /*testing.line_draw_test(window);*/
-        circle.drawCircleXY();
+        circle.drawCircleXY(200,200, window);
         /*test.line_draw_test(window);*/
         
         window.display();

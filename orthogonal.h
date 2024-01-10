@@ -7,7 +7,7 @@
 
 class Orthogonal {
 public:
-    void draw_points(sf::RenderWindow& window);
+    void draw_points(float xvalue, float yvalue, int number, sf::RenderWindow& window);
     void drawCircleXY(float xvalue, float yvalue, sf::RenderWindow& window);
 
 };
