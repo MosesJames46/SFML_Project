@@ -1,24 +1,16 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "player.h"
-#include "player_image.h"
-#include "fonts.h"
-#include "platform.h"
-#include "get_view.h"
-#include "tile_map.h"
 #include "orthogonal.h"
-
+#include "WindowProperties.h"
+#include "mouse_property.h"
+#include "ZAxis.h"
 int main() {
-    PlayerImage* player = new PlayerImage();
-    sf::RenderWindow window(sf::VideoMode(player->window_width, player->window_height), "Platformer");
-   
+    
+    sf::RenderWindow window(sf::VideoMode(300, 300), "Platformer");
+    WindowProperties windowProperty(window);
+    Orthogonal circle;
     //Soon to be controls
-    /*Tile_Map tiles(window, player->window_width, player->window_height);*/
-    MouseProperty mouse(window);
-    Orthogonal test(window);
-    player->load_texture("data/images/char_plyr_humn.png");
-    player->set_position(100.0f, 100.0f);
-    Get_Fonts hello_world;
+    /*Orthogonal testing;*/
+    ZAxis z;
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -28,18 +20,18 @@ int main() {
         }
         
         window.clear();
-        //Draw player
-        //player.draw_sprite(window, "data/images/char_plyr_humn.png");
-        /*player->move_player(window);*/
+      /*  Draw player*/
         
-        /*hello_world.get_font("data/fonts/consolai.ttf", "Hello World", 10, window);*/
-        /*Platform block("data/images/assets/grass_pltf_ver1.png");*/
-       /* mouse.get_mouse_position();*/
-        /*block.draw_platform(window);*/
-        /*tiles.draw_circles();*/
+        
         // Draw your SFML content here
+        std::cout << z.calculateRadians(45) << " This is the radian value.\n";
+        std::cout << z.calculateN(z.calculateRadians(45)) << " This is the N value.\n";
+        std::cout << z.calculateY(window) << "\n";
+        std::cout << z.calculateZ(200, z.calculateRadians(45), window) << " This is the z axis for " << 200 << ".\n";
+        /*testing.line_draw_test(window);*/
+        circle.drawCircleXY();
+        /*test.line_draw_test(window);*/
         
-        test.line_draw_test();
         window.display();
 
         //Control player movement
@@ -47,6 +39,8 @@ int main() {
 
         
     }
+
+  
 
     return 0;
 }
