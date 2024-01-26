@@ -1,16 +1,23 @@
 #pragma once
-#include "orthogonal.h"
+
 #include "WindowProperties.h"
 #include "mouse_property.h"
-#include "ZAxis.h"
+
+#include "VectorFunctions.h"
+#include "DrawFOV.h"
+#include "DrawPlane2D.h"
+
 int main() {
-    
-    sf::RenderWindow window(sf::VideoMode(300, 300), "Platformer");
+   
+    sf::RenderWindow window(sf::VideoMode(600, 600), "Platformer");
     WindowProperties windowProperty(window);
-    Orthogonal circle;
+    
+    
     //Soon to be controls
     /*Orthogonal testing;*/
-    ZAxis z;
+    
+    
+    DrawFOV fov(window);
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -24,12 +31,11 @@ int main() {
         
         
         // Draw your SFML content here
-        std::cout << z.calculateRadians(45) << " This is the radian value.\n";
-        std::cout << z.calculateN(z.calculateRadians(45)) << " This is the N value.\n";
-        std::cout << z.calculateY(window) << "\n";
-        std::cout << z.calculateZ(200, z.calculateRadians(45), window) << " This is the z axis for " << 200 << ".\n";
+
+        /*fov.drawFOV();*/
+
         /*testing.line_draw_test(window);*/
-        circle.drawCircleXY(200,200, window);
+        
         /*test.line_draw_test(window);*/
         
         window.display();
@@ -41,6 +47,6 @@ int main() {
     }
 
   
-
+    std::cout << std::sin(3.14 / 6) << "\n";
     return 0;
 }

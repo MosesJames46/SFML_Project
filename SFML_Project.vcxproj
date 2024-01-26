@@ -165,6 +165,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DrawFOV.cpp" />
+    <ClCompile Include="DrawPlane2D.cpp" />
     <ClCompile Include="fonts.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix3x3.cpp" />
@@ -173,16 +175,20 @@
     <ClCompile Include="orthogonal.h" />
     <ClCompile Include="physics.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="VectorFunctions.cpp" />
     <ClCompile Include="WindowProperties.cpp" />
     <ClCompile Include="ZAxis.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DrawFOV.h" />
+    <ClInclude Include="DrawPlane2D.h" />
     <ClInclude Include="fonts.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="Matrix3x3.h" />
     <ClInclude Include="mouse_property.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_image.h" />
+    <ClInclude Include="VectorFunctions.h" />
     <ClInclude Include="WindowProperties.h" />
   </ItemGroup>
   <ItemGroup>
