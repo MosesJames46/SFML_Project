@@ -165,34 +165,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DrawFOV.cpp" />
-    <ClCompile Include="DrawPlane2D.cpp" />
     <ClCompile Include="fonts.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix3x3.cpp" />
     <ClCompile Include="mouse_property.cpp" />
-    <ClCompile Include="orthogonal.cpp" />
-    <ClCompile Include="orthogonal.h" />
-    <ClCompile Include="physics.cpp" />
-    <ClCompile Include="player.cpp" />
+    <ClCompile Include="Sqaure.cpp" />
+    <ClCompile Include="triangle.cpp" />
+    <ClCompile Include="triangle.h" />
     <ClCompile Include="VectorFunctions.cpp" />
-    <ClCompile Include="WindowProperties.cpp" />
-    <ClCompile Include="ZAxis.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DrawFOV.h" />
-    <ClInclude Include="DrawPlane2D.h" />
     <ClInclude Include="fonts.h" />
-    <ClInclude Include="level.h" />
     <ClInclude Include="Matrix3x3.h" />
     <ClInclude Include="mouse_property.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="player_image.h" />
+    <ClInclude Include="randomNumber.h" />
+    <ClInclude Include="Square.h" />
     <ClInclude Include="VectorFunctions.h" />
-    <ClInclude Include="WindowProperties.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ZAxis.h" />
+    <Font Include="..\..\..\..\Desktop\Development\Fonts\consola.ttf" />
+    <Font Include="..\..\..\..\Desktop\Development\Fonts\consolab.ttf" />
+    <Font Include="..\..\..\..\Desktop\Development\Fonts\consolai.ttf" />
+    <Font Include="..\..\..\..\Desktop\Development\Fonts\consolaz.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

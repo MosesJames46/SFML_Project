@@ -13,50 +13,38 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\fonts">
+      <UniqueIdentifier>{84e81159-8755-4df1-a2fa-5d79b7ee51b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="fonts.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="physics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mouse_property.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="orthogonal.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="orthogonal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Matrix3x3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WindowProperties.cpp">
+    <ClCompile Include="VectorFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ZAxis.cpp">
+    <ClCompile Include="Sqaure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triangle.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fonts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="level.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="player_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mouse_property.h">
@@ -65,13 +53,28 @@
     <ClInclude Include="Matrix3x3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WindowProperties.h">
+    <ClInclude Include="VectorFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="randomNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Square.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ZAxis.h">
-      <Filter>Header Files</Filter>
-    </None>
+    <Font Include="..\..\..\..\Desktop\Development\Fonts\consolai.ttf">
+      <Filter>Source Files\fonts</Filter>
+    </Font>
+    <Font Include="..\..\..\..\Desktop\Development\Fonts\consola.ttf">
+      <Filter>Source Files\fonts</Filter>
+    </Font>
+    <Font Include="..\..\..\..\Desktop\Development\Fonts\consolaz.ttf">
+      <Filter>Source Files\fonts</Filter>
+    </Font>
+    <Font Include="..\..\..\..\Desktop\Development\Fonts\consolab.ttf">
+      <Filter>Source Files\fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>

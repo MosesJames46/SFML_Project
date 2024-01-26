@@ -2,19 +2,26 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include "ZAxis.h"
 #include <SFML/Graphics.hpp>
 class VectorFunctions {
 
 public:
-	VectorFunctions(sf::RenderWindow& window) : window(window) {}
+	VectorFunctions(float x, float y) : x(x), y(y) {}
+	VectorFunctions(float x, float y, float z) : x(x), y(y), z(z) {}
 	
 	//find the magnitude of vectors
-	double magnitude(std::vector<double> vector);
-	double vectorValue2d(std::vector<double> vector);
-
-	std::vector<float> frustum(double xvalue, double yvalue, int theta, double percentagex, double percentagey, sf::RenderWindow& window);
+	double magnitude2D();
+	float distance2D(std::vector<float> point1, std::vector<float> point2);
+	std::vector<std::vector<float>> matrixMultiply(std::vector<std::vector<float>> mat1);
+	
+	void readMat();
 
 private:
-	sf::RenderWindow& window;
+	std::vector<std::vector<float>> matrix{};
+	
+	float x;
+	float y;
+	float z;
+	std::vector<float> vector2D{ x, y };
+	std::vector<float> vector3D{ x,y,z };
 };
