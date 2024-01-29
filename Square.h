@@ -2,20 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "VectorFunctions.h"
+#include "triangle.h"
 
-class Square {
+class Square : public Triangle {
 public:
-	Square( float x, float y, sf::RenderWindow& window) 
-		: x(x),y(y),window(window) {}
+	Square( sf::RenderWindow& window) 
+		:window(window), Triangle(window) {}
 
-	std::vector<std::vector<float>> drawSquare();
-	
-	
 
-	//return each point
-	std::vector<std::vector<float>> getPoints();
-
-	void printPoints();
 private:
 	sf::RenderWindow& window;
 	float x;

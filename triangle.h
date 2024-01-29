@@ -1,65 +1,27 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>
-#include "fonts.h"
+#include "line.h"
+#include "text.h"
+#include "projectionMat.h"
 
-class Triangle {
+class Triangle : public Lines{
 private:
-	sf::CircleShape point1;
-	sf::CircleShape point2;
-	sf::CircleShape point3;
-	std::vector<std::vector<float>> originPosition = {
-		{-1, 1},
-		{1, 1},
-		{-1, -1}
-	};
 	sf::RenderWindow& window;
-	bool positionInit = false;
+	Lines line1;
+	Lines line2;
+	Lines line3;
+
+	 
 
 public:
-	Triangle(sf::RenderWindow& window) : window(window) {}
+	Triangle(sf::RenderWindow& window)
+		: window(window), 
+		Lines(window, { 1.0, 1.0, 1.0, 1.0 }, { 1.0, -1.0, 1.0, 1.0 }),
+		line1(window, { -1.0 , -1.0 , 1.0 , 1.0 }, { 1.0 , 1.0, 1.0, 1.0 }),
+		line2(window, { 1.0, 1.0, 1.0, 1.0 }, { 1.0, -1.0, 1.0, 1.0 }), 
+		line3(window, { 1.0, -1.0, 1.0, 1.0 }, { -1.0, -1.0, 1.0, 1.0 }) {}
 
-	//prints out triangles
-	std::vector<float> getTrianglePoints();
-
-	void setRadiusPoint1(float value);
-	void setRadiusPoint2(float value);
-	void setRadiusPoint3(float value);
-
-	void setAllRadii(float value);
-
-
-	//Functions to get the radius 
-	float getRadiusPoint1();
-	float getRadiusPoint2();
-	float getRadiusPoint3();
-	//Returns all radii
-	std::vector<float> getAllRadii();
-	//Read all radii
-	void readAllRadii();
-
-	//initialize the position of each point
-	void initPoint1Position();
-	void initPoint2Position();
-	void initPoint3Position();
-
-	bool initAllPositions();
-
-	//Return the position of the triangle
-	sf::Vector2f returnPosition1();
-	sf::Vector2f returnPosition2();
-	sf::Vector2f returnPosition3();
-
-
-
-	void readPositions();
-
-	void displayPoitions();
-
-	void drawLines();
-
-	void scalePoint1(float x, float y);
-	void scalePoint2(float x, float y);
-	void scalePoint3(float x, float y);
+	void drawTriangle();
 
 };

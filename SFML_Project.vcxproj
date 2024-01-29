@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Moses James\source\repos\SFML_Project\library\include\SFML;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Moses James\source\repos\SFML_Project\library\include\SFML;C:\Users\Moses James\Desktop\Development\glm-master\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -131,7 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Moses James\source\repos\SFML_Project\library\include\SFML;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Moses James\source\repos\SFML_Project\library\include\SFML;C:\Users\Moses James\Desktop\Development\glm-master\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -166,20 +166,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="fonts.cpp" />
+    <ClCompile Include="line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix3x3.cpp" />
     <ClCompile Include="mouse_property.cpp" />
+    <ClCompile Include="point.cpp" />
+    <ClCompile Include="projectionMat.cpp" />
     <ClCompile Include="Sqaure.cpp" />
+    <ClCompile Include="text.cpp" />
+    <ClCompile Include="transform.cpp" />
     <ClCompile Include="triangle.cpp" />
     <ClCompile Include="triangle.h" />
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
     <ClInclude Include="fonts.h" />
+    <ClInclude Include="line.h" />
     <ClInclude Include="Matrix3x3.h" />
     <ClInclude Include="mouse_property.h" />
+    <ClInclude Include="point.h" />
+    <ClInclude Include="projectionMat.h" />
     <ClInclude Include="randomNumber.h" />
     <ClInclude Include="Square.h" />
+    <ClInclude Include="text.h" />
+    <ClInclude Include="transform.h" />
     <ClInclude Include="VectorFunctions.h" />
   </ItemGroup>
   <ItemGroup>
