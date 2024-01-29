@@ -166,20 +166,29 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="fonts.cpp" />
+    <ClCompile Include="line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix3x3.cpp" />
     <ClCompile Include="mouse_property.cpp" />
+    <ClCompile Include="projectionMat.cpp" />
     <ClCompile Include="Sqaure.cpp" />
+    <ClCompile Include="text.cpp" />
+    <ClCompile Include="transform.cpp" />
     <ClCompile Include="triangle.cpp" />
     <ClCompile Include="triangle.h" />
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
     <ClInclude Include="fonts.h" />
+    <ClInclude Include="line.h" />
     <ClInclude Include="Matrix3x3.h" />
     <ClInclude Include="mouse_property.h" />
+    <ClInclude Include="projectionMat.h" />
     <ClInclude Include="randomNumber.h" />
     <ClInclude Include="Square.h" />
+    <ClInclude Include="text.h" />
+    <ClInclude Include="transform.h" />
     <ClInclude Include="VectorFunctions.h" />
   </ItemGroup>
   <ItemGroup>
