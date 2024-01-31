@@ -29,17 +29,9 @@ void Lines::drawShow(bool value) {
 
 void Lines::setPerspective() {
 	//get the vector for the projection matrix here
-	
+	std::vector<std::vector<double>> fpovMat = fpov.returnProjMat();
 
-	//Then use function to convert values to respective 2D
-
-
-
-
-	
-	//Sets the perspective of the x and y values for each point respectively
-
-
+	//Then use function to convert values to respective 2
 }
 
 bool Lines::clipping() {
@@ -65,5 +57,3 @@ void Lines::drawLines3D() {
 
 		window.draw(buffer);
 	}
-}
-
