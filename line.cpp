@@ -29,7 +29,7 @@ void Lines::drawShow(bool value) {
 
 void Lines::setPerspective() {
 	//get the vector for the projection matrix here
-	std::vector<std::vector<double>> fpovMat = fpov.returnProjMat();
+	
 
 	//Then use function to convert values to respective 2
 }
