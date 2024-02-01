@@ -11,12 +11,13 @@ public:
 	double windowX = static_cast<double>(window.getSize().x);
 	double windowY = static_cast<double>(window.getSize().y);
 	double aspectRatio = windowY / windowX;
-	double fov = 1.0f / aspectRatio;
+	double theta = 45;
+	double fov = 1.0f / std::tan(theta * 3.141592 / 180) ;
 	double x =  aspectRatio * fov;
 	double y = 1.0f /fov;
 	double q = 200 / (200 - 1.0f);
 	double z =  - (200 * 1.0f) / 200 - 1.0f;
-	double w = 1;
+	double w = -1;
 
 	glm::mat4 returnProjMat();
 	double returnScaling();

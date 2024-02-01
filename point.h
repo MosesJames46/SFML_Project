@@ -20,6 +20,8 @@ public:
 	void printPointLocation3D();
 	void setPoint3D();
 
+	glm::vec4 returnPointVector();
+
 private:
 	double pointPositionX = 0;
 	double pointPositionY = 0;

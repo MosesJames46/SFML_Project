@@ -4,8 +4,8 @@ glm::mat4 projMat::returnProjMat() {
 	glm::mat4 FOV{ 
 		x, 0 , 0 ,0,
 		0, y, 0, 0,
-		0, 0, q, w,
-		0, 0, z, 0
+		0, 0, q, 0,
+		0, 0, z, w
 	};
 	
 	return FOV;

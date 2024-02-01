@@ -34,6 +34,9 @@ void Point::setPoint3D() {
 	pointPositionX = point3D.x / point3D.w;
 	pointPositionY = point3D.y / point3D.w;
 	pointPositionZ = point3D.z / point3D.w;
+	/*std::cout << "This represents the values of x and w: " << point3D.x << ", " << point3D.w << "\n";
+	std::cout << "This represents the values of y and w: " << point3D.y << ", " << point3D.w << "\n";
+	std::cout << "This represents the values of z and w: " << point3D.z << ", " << point3D.w << "\n";*/
 }
 
 glm::vec4 Point::pointFromFov() {
@@ -66,4 +69,8 @@ void Point::printPointLocation3D() {
 
 void Point::showPoint3D() {
 	window.draw(createPoint3D());
+}
+
+glm::vec4 Point::returnPointVector() {
+	return glm::vec4{ pointPositionX , pointPositionY, pointPositionZ, pointPositionW };
 }

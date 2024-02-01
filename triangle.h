@@ -8,19 +8,16 @@
 class Triangle : public Lines{
 private:
 	sf::RenderWindow& window;
-	Lines line1;
-	Lines line2;
-	Lines line3;
+	glm::vec4 initial{ 0,0,0,1 };
+	glm::vec4 terminal{ 0,0,0,1 };
 
 	 
 
 public:
 	Triangle(sf::RenderWindow& window)
-		: window(window), 
-		Lines(window, { 1.0, 1.0, 1.0, 1.0 }, { 1.0, -1.0, 1.0, 1.0 }),
-		line1(window, { -1.0 , -1.0 , 1.0 , 1.0 }, { 1.0 , 1.0, 1.0, 1.0 }),
-		line2(window, { 1.0, 1.0, 1.0, 1.0 }, { 1.0, -1.0, 1.0, 1.0 }), 
-		line3(window, { 1.0, -1.0, 1.0, 1.0 }, { -1.0, -1.0, 1.0, 1.0 }) {}
+		: window(window),
+		Lines(initial, terminal, window) {}
+
 
 	void drawTriangle();
 

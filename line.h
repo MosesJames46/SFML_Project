@@ -7,28 +7,25 @@
 
 class Lines : public Point {
 public:
-	Lines(sf::RenderWindow& window, std::vector<double> initialPoint, std::vector<double> terminalPoint) : 
-		initialPoint(initialPoint), terminalPoint(terminalPoint),
-		window(window), Point( 0, 0, 0, 1, window){}
+	Lines(glm::vec4 initialPosition, glm::vec4 terminalPosition,  sf::RenderWindow& window) :
+		initialPosition(initialPosition), terminalPosition(terminalPosition),
+		window(window), Point(0, 0, 0, 1, window), 
+		initialPoint(initialPosition.x, initialPosition.y, initialPosition.z, initialPosition.w, window),
+		terminalPoint(terminalPosition.x, terminalPosition.y, terminalPosition.z, terminalPosition.w, window){}
 
 
 
-	std::vector<std::vector<double>> getPositionVector();
-	void setPositionVector(std::vector<std::vector<double>> newPosition);
-
-
-	void drawShow(bool value);
-	void setPerspective();
-	void drawLines3D();
 	
-	double returnFPOV();
-	void setFPOVScale(double scale);
+	void drawLines();
+	
 
-	bool clipping();
+
 private:
 	sf::RenderWindow& window;
-	std::vector<double> initialPoint = { -.5, .5, 0, 1 };
-	std::vector<double> terminalPoint = { .5, .5,0 , 1 };
-	bool draw = false;
-	bool clipped = false;
+	std::vector<Point> pointVector{};
+	Point initialPoint;
+	Point terminalPoint;
+	glm::vec4 initialPosition;
+	glm::vec4 terminalPosition;
+	
 };

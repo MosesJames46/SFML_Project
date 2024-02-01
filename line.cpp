@@ -1,59 +1,38 @@
 #include "line.h"
 
 
+void Lines::drawLines() {
+	initialPoint.createPoint3D();
+	terminalPoint.createPoint3D();
 
-std::vector<std::vector<double>> Lines::getPositionVector() {
-	return  { initialPoint, terminalPoint };
-}
+	initialPoint.setPoint3D();
+	terminalPoint.setPoint3D();
 
-void Lines::setPositionVector(std::vector<std::vector<double>> newPosition) {
-	initialPoint[0] = newPosition[0][0];
-	initialPoint[1] = newPosition[0][1];
-	initialPoint[2] = newPosition[0][2];
-	initialPoint[3] = newPosition[0][3];
-
-	terminalPoint[0] = newPosition[1][0];
-	terminalPoint[1] = newPosition[1][1];
-	terminalPoint[2] = newPosition[1][2];
-	terminalPoint[3] = newPosition[1][3];
-}
-
-void Lines::drawShow(bool value) {
-	if (value) {
-		this->draw = true;
-	}
-	else if (!value) {
-		this->draw = false;
-	}
-}
-
-void Lines::setPerspective() {
-	//get the vector for the projection matrix here
+	initialPosition = terminalPoint.returnPointVector();
+	terminalPosition = initialPoint.returnPointVector();
 	
+	double changeInX = terminalPosition.x - initialPosition.x;
+	double changeInY = terminalPosition.y - initialPosition.y;
 
-	//Then use function to convert values to respective 2
-}
+	double lengthOfLine = std::sqrt(changeInX * changeInX + changeInY * changeInY);
 
-bool Lines::clipping() {
-	if (initialPoint[0] >= -1 && initialPoint[0] <= 1 || initialPoint[1] >= -1 && initialPoint[1] <= 1 
-		|| terminalPoint[0] >= -1 && terminalPoint[0] <= 1 || terminalPoint[1] >= -1 && terminalPoint[1] <= 1) {
-		std::cout << 1;
+	double angleTheta = std::atan2(changeInY, changeInX);
+
+	for (double i = 0; i < lengthOfLine; i+= .001) {
+		double newPointX = initialPosition.x + std::cos(angleTheta) * i;
+		double newPointY = initialPosition.y + std::sin(angleTheta) * i;
+		Point pointOfIntrest(newPointX, newPointY, 0, 1, window);
+		pointVector.push_back(pointOfIntrest);
 	}
-	return false;
-}
 
-void Lines::drawLines3D() {
-	if (draw){
-		sf::Vertex vertex[2];
+	for (int i = 0; i < pointVector.size(); i++) {
+		pointVector[i].createPoint3D();
+		pointVector[i].setPoint3D();
+		
+		/*std::cout << "The position above is the position relative to this i: " << i << "\n";*/
+		pointVector[i].showPoint3D();
 
-		vertex[0].position = sf::Vector2f(static_cast<float>(initialPoint[0]), static_cast<float>(initialPoint[1]));
-		vertex[1].position = sf::Vector2f(static_cast<float>(terminalPoint[0]), static_cast<float>(terminalPoint[1]));
-
-
-		sf::VertexBuffer buffer(sf::Lines);
-
-		buffer.create(2);
-		buffer.update(vertex);
-
-		window.draw(buffer);
+		
 	}
+
+}
